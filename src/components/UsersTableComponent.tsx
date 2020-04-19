@@ -10,7 +10,6 @@ import {
     TableHead,
     TableRow,
     Typography,
-    TableFooter
 } from "@material-ui/core";
 import Alert from '@material-ui/lab/Alert';
 import {TableData} from "../redux/main-reducer";
@@ -25,12 +24,12 @@ type Props = {
 }
 
 export const UsersTableComponent: React.FC<Props> = ({
-                                                         tableData,
-                                                         getUsers,
-                                                         selectUser,
-                                                         selectAllUsers,
-                                                         serverMessage,
-                                                     }) => {
+    tableData,
+    getUsers,
+    selectUser,
+    selectAllUsers,
+    serverMessage,
+    }) => {
 
     React.useEffect(() => {
         getUsers()
@@ -84,7 +83,7 @@ export const UsersTableComponent: React.FC<Props> = ({
                         ))}
                     </TableBody>
                     <caption>
-                        <Typography variant='h6'>
+                        <Typography variant="h6">
                             Users: {tableData.items.filter(user => user.checked).map((user, index, arr) =>
                             index !== arr.length - 1
                                 ? `${user.firstName}, `
